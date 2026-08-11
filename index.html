@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbara Franca | Psychologist & Specialist in Neuropsychology</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #4a7c59;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --white: #ffffff;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-serif: 'Georgia', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+            flex: 1.5;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Quote Section */
+        .quote-box {
+            background-color: #eef4f0;
+            border-left: 4px solid var(--accent-color);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-box blockquote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #2d4030;
+        }
+
+        .quote-box cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #3b6346;
+            transform: translateY(-2px);
+        }
+
+        /* Main Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--accent-color);
+            text-align: right;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .quote-box {
+                border-left: none;
+                border-top: 4px solid var(--accent-color);
+                border-radius: 0 0 8px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Barbara Franca</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Specializations</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image-container">
+                <img src="barbara.jpg" alt="Barbara Franca" class="profile-img">
+            </div>
+            <div class="hero-content">
+                <h1>Barbara Franca</h1>
+                <p class="subtitle">Psychologist | Specialist in Neuropsychology</p>
+
+                <div class="quote-box">
+                    <blockquote>
+                        "When we are no longer able to change a situation, we are challenged to change ourselves."
+                    </blockquote>
+                    <cite>— Viktor E. Frankl</cite>
+                </div>
+
+                <a href="#contact" class="btn">Schedule a Consultation</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                Welcome. As a Psychologist and Specialist in Neuropsychology, my practice focuses on understanding the intricate relationship between brain function, cognition, and behavior. I provide evidence-based evaluations and therapeutic interventions tailored to help individuals navigate cognitive, emotional, and psychological challenges.
+            </p>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">Areas of Expertise</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Neuropsychological Assessment</h3>
+                    <p>Comprehensive evaluations to assess memory, attention, executive functioning, and cognitive strengths or deficits.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cognitive Rehabilitation</h3>
+                    <p>Targeted therapeutic strategies designed to rebuild or compensate for cognitive functions affected by neurological conditions or stress.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Clinical Psychotherapy</h3>
+                    <p>Individualized psychological support aimed at fostering resilience, emotional regulation, and self-understanding.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Barbara is the best psychologist I’ve ever worked with. Before seeing her, I was feeling totally overwhelmed and confused about what was going on with my memory and focus. From day one, she made me feel completely comfortable and truly listened to.<br><br>
+                    What I appreciate most is how simple she makes everything. She explained my evaluation results without using complicated words and gave me easy, real-world tools that actually helped. She didn't just help me figure out what was going on—she helped me get my life back."</p>
+                    <div class="testimonial-author">— Vanessa</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I can't recommend her (Barbara) enough. She helped me get through a really tough spot in my life when I felt stuck and stressed out. She's super warm, easy to talk to, and always knows how to ask the right questions to help you figure it out.<br><br>
+                    You can tell she really knows her stuff, but she talks to you like a real person. Now I can have a clear mind and way better ways to handle my stress. She truly made a world of difference for me."</p>
+                    <div class="testimonial-author">— Letícia</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <form action="#" method="post" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Barbara Franca. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
